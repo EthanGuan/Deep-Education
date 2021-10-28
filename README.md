@@ -1,5 +1,27 @@
 # Deep-Education
 
+## Results Snapshot
+
+```
+Epoch 193 | Train_Loss: 0.0217
+Epoch 194 | Train_Loss: 0.0217
+Epoch 195 | Train_Loss: 0.0216
+Epoch 196 | Train_Loss: 0.0215
+Epoch 197 | Train_Loss: 0.0215
+Epoch 198 | Train_Loss: 0.0214
+Epoch 199 | Train_Loss: 0.0213
+the time of graphpy is: 0:00:03.522660
+Epoch 199 | Test_accuracy: 0.7280
+``` 
+
+## How to build
+0. `git submodule update --init --recursive`
+1. `cd Deep-Education/kernel;mkdir build;cd build`
+2. `cp ../../pygraph/pygraph.cpython-38-x86_64-linux-gnu.so .`
+3. `cmake ..;make`
+4. `cp ../../dl_code_python/*.py .`
+5. `python GCN_pubmed.py`
+   
 This repository is now available for public use for teaching end to end workflow of deep learning.  This implies that learners/researchers will learn (by doing) beyond what is generally available as tutorial on general-purpose deep learning framework. 
 The aim is to learn how to write a new operator as part of deep learning layer, and how to use it inside a deep learning module using Python environment (Pytorch or Tensorflow). The second stage is to know more about the role of tensor in the computation graph (forward and backward computation) and implement the kernel of the new operator in an independent C++ module.
 
