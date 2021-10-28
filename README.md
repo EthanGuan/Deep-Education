@@ -16,7 +16,7 @@ Epoch 199 | Test_accuracy: 0.7280
 
 ## How to build
 0. `git submodule update --init --recursive`
-1. `cd Deep-Education/kernel;mkdir build;cd build`
+1. `cd ./kernel;mkdir build;cd build`
 2. `cp ../../pygraph/pygraph.cpython-38-x86_64-linux-gnu.so .`
 3. `cmake ..;make`
 4. `cp ../../dl_code_python/*.py .`
