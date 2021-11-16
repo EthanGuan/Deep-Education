@@ -2,6 +2,7 @@
 
 ## Results Snapshot
 
+Sequential Version:
 ```
 Epoch 193 | Train_Loss: 0.0217
 Epoch 194 | Train_Loss: 0.0217
@@ -14,7 +15,25 @@ the time of graphpy is: 0:00:03.522660
 Epoch 199 | Test_accuracy: 0.7280
 ``` 
 
+Parallel Version(8 threads):
+```
+Epoch 193 | Train_Loss: 0.0198
+Epoch 194 | Train_Loss: 0.0198
+Epoch 195 | Train_Loss: 0.0198
+Epoch 196 | Train_Loss: 0.0196
+Epoch 197 | Train_Loss: 0.0195
+Epoch 198 | Train_Loss: 0.0195
+Epoch 199 | Train_Loss: 0.0194
+the time of graphpy is: 0:00:01.830288
+Epoch 199 | Test_accuracy: 0.7280
+```
+
 ## How to build
+Parallel version commit id: b9f43696053b142bef9c731a8f9efafa555ddfe5
+Sequential version commit id: 6c753f54fb3707447bcce8ddbc8faec971aef82f
+
+Run the following commands to build:
+
 0. `git submodule update --init --recursive`
 1. `cd ./kernel;mkdir build;cd build`
 2. `cp ../../pygraph/pygraph.cpython-38-x86_64-linux-gnu.so .`
