@@ -22,6 +22,21 @@ class csr_t {
 
  public:
     csr_t() {};
+    csr_t(const csr_t & csr_object) {
+        v_count = csr_object.v_count;
+        dst_size = csr_object.dst_size; //
+        e_count = csr_object.v_count;
+        flag = csr_object.flag;   
+
+        for(int i=0;i<v_count+1;i++) {
+            offset[i] = csr_object.offset[i];
+        }
+
+        for(int i=0;i<offset[v_count];i++) {
+            nebrs[i] = csr_object.nebrs[i];
+        }
+    };
+
     void init(vid_t a_vcount, vid_t a_dstsize, void* a_offset, void* a_nebrs, int64_t a_flag, vid_t edge_count) {
         v_count = a_vcount;
         dst_size = a_dstsize;
@@ -70,6 +85,12 @@ class graph_t {
     csr_t csc;
     coo_t coo;
  public:
+    graph_t() {}
+    graph_t(const graph_t& graph) {
+        csr = graph.csr;
+        csc = graph.csc;
+    }
+
     void init(vid_t a_vcount, vid_t a_dstsize, void* a_offset, void* a_nebrs, void* a_offset1, void* a_nebrs1, int64_t flag, int64_t num_vcount) {
         csr.init(a_vcount, a_dstsize, a_offset, a_nebrs, flag, num_vcount);
         csc.init(a_vcount, a_dstsize, a_offset1, a_nebrs1, flag, num_vcount);

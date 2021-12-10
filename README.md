@@ -1,6 +1,18 @@
 # Deep-Education
+## Final Project
+This repository contains the implemention of GraphSAGE for the final project. 
 
-## Results Snapshot
+Run the following commands to build & run:
+
+0. `git submodule update --init --recursive`
+1. `cd ./kernel;mkdir build;cd build`
+2. `cp ../../pygraph/pygraph.cpython-38-x86_64-linux-gnu.so .`
+3. `cmake ..;make`
+4. `cp ../../dl_code_python/*.py .`
+5. `python SAGE_pubmed.py`
+
+## Assignment of GCN
+### Results Snapshot
 
 Sequential Version:
 ```
@@ -28,7 +40,7 @@ the time of graphpy is: 0:00:01.830288
 Epoch 199 | Test_accuracy: 0.7280
 ```
 
-## How to build
+### How to build
 Parallel version commit id: b9f43696053b142bef9c731a8f9efafa555ddfe5
 Sequential version commit id: 6c753f54fb3707447bcce8ddbc8faec971aef82f
 

@@ -79,6 +79,13 @@ PYBIND11_MODULE(kernel, m) {
            return graph;
       }
   );
+
+  m.def("init_like",
+      [](graph_t* graph) {
+           graph_t* subgraph =  new graph_t(*graph);
+           return subgraph;
+      }
+  );
     
   export_kernel(m);
 }
